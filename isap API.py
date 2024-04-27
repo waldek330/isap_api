@@ -31,7 +31,7 @@ def send_email(dokumenty_nazwa, *args, **kwargs):
         SMTP_SERVER = 'oneumbrella.pl' #Email Server (don't change!)
         SMTP_PORT = 587 #Server Port (don't change!)
         GMAIL_USERNAME = 'no-replay@oneumbrella.pl' #change this to match your gmail account
-        GMAIL_PASSWORD = '&R9w*W7b5y'  #change this to match your gmail app-password
+        GMAIL_PASSWORD = ''  #change this to match your gmail app-password
         
         class Emailer:
             def sendmail(self, recipient, subject, content):
@@ -64,10 +64,10 @@ def send_email(dokumenty_nazwa, *args, **kwargs):
 
         sender = Emailer()
 
-        sendTo = 'waldemar.lusiak@nksgroup.pl, remigiusz.zerbst@nksgroup.pl'
+        sendTo = 'waldemar.lusiak@nksgroup.pl'
         emailSubject = "Automatically generated email from Internetowy System Aktów Prawnych"
         emailContent = "Szukane dokumenty to: \n\n {}".format(dokumenty_nazwa)
-        # ,michal.sniegocki@nksgroup.pl,remigiusz.zerbst@nksgroup.pl
+        # 
         #Sends an email to the "sendTo" address with the specified "emailSubject" as the subject and "emailContent" as the email content.
         sender.sendmail(sendTo, emailSubject, emailContent)
 
@@ -198,14 +198,14 @@ def glpi_ticket_creation(email_contents):
         raise(e)
 
 
-email_contents = "trzy huje"    
+email_contents = " "    
 glpi_ticket_creation(email_contents)
 
 """
 
 URL = 'https://glpistg10.oneumbrella.pl/marketplace/formcreator/front/formdisplay.php?id=16/apirest.php'
-APPTOKEN = '5n8BQ0Mwwvij6xlrbFDumAhE5WYUWp10IlqkfeK9'
-USERTOKEN = 'w6lY5MOFyEW9s4Ym6KqepoNcctWoavpQoDlls3QT'
+APPTOKEN = ''
+USERTOKEN = ''
 
 try:
     with glpi_api.connect(URL, APPTOKEN, USERTOKEN, verify_certs=False) as glpi:
@@ -226,8 +226,8 @@ except glpi_api.GLPIError as err:
 import requests
 
 URL = "https://glpistg10.oneumbrella.pl/marketplace/formcreator/front/formdisplay.php?id=16/apirest.php"
-APPTOKEN = "5n8BQ0Mwwvij6xlrbFDumAhE5WYUWp10IlqkfeK9"
-USERTOKEN = "w6lY5MOFyEW9s4Ym6KqepoNcctWoavpQoDlls3QT"
+APPTOKEN = ""
+USERTOKEN = ""
 
 try:
     headers = {
