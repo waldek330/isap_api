@@ -28,9 +28,9 @@ import pyautogui as py
 
 def send_email(dokumenty_nazwa, *args, **kwargs):
         #Email Variables
-        SMTP_SERVER = 'oneumbrella.pl' #Email Server (don't change!)
+        SMTP_SERVER = '' #Email Server (don't change!)
         SMTP_PORT = 587 #Server Port (don't change!)
-        GMAIL_USERNAME = 'no-replay@oneumbrella.pl' #change this to match your gmail account
+        GMAIL_USERNAME = '' #change this to match your gmail account
         GMAIL_PASSWORD = ''  #change this to match your gmail app-password
         
         class Emailer:
@@ -64,7 +64,7 @@ def send_email(dokumenty_nazwa, *args, **kwargs):
 
         sender = Emailer()
 
-        sendTo = 'waldemar.lusiak@nksgroup.pl'
+        sendTo = ''
         emailSubject = "Automatically generated email from Internetowy System Aktów Prawnych"
         emailContent = "Szukane dokumenty to: \n\n {}".format(dokumenty_nazwa)
         # 
@@ -143,8 +143,8 @@ def glpi_ticket_creation(email_contents):
     content = email_contents
     title = "ISAP- Internetowy System Aktów Prawnych, dokumenty do sprawdzenia"
     responsible_person = "Łusiak Waldemar"
-    login_glpi_api = "apiuser"
-    passw_glpi_api = "apiuser"
+    login_glpi_api = ""
+    passw_glpi_api = ""
     url = "https://glpistg10.oneumbrella.pl/front/central.php"
     #prd = "https://glpi.oneumbrella.pl/front/central.php"
     try:
